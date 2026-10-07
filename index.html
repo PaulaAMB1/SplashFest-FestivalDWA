@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SplashFestFestival</title>
+    <meta name="description" content="El evento manga y cómic del año llega a Madrid. Descubre invitados, fanzines y actividades exclusivas en Splash Fest.">
+
+    <!-- Tipografías: Chakra Petch (Títulos) e Inter (Cuerpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome para los iconos -->
+    <script src="https://kit.fontawesome.com/c3fd22b8e3.js" crossorigin="anonymous"></script>
+
+    <!-- AOS desde CDN (jsDelivr) para las animaciones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+    <!-- Vuestros estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Script del tema claro/oscuro -->
+    <script src="js/theme.js"></script>
+</head>
+<body>
+
+    <!-- ============ NAVEGACIÓN ============ -->
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="#inicio" class="logo">Splash<span>Fest</span></a>
+
+            <ul class="nav__links" id="menu">
+                <li><a href="#introduccion">Introducción</a></li>
+                <li><a href="#invitados">Invitados</a></li>
+                <li><a href="#programa">Programa</a></li>
+                <li><a href="#actividades">Actividades</a></li>
+                <li><a href="#donde-encontrarnos">Ubicación</a></li>
+                <li><a href="#entradas">Entradas</a></li>
+            </ul>
+
+            <div class="nav__actions">
+                <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú" id="Hamburguesa">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ HERO (Presentación) ============ -->
+    <header class="hero" id="inicio">
+        <div class="container hero__inner">
+            <div class="hero__text" data-aos="fade-right">
+                <p class="tag">15 AL 17 DE NOVIEMBRE - IFEMA MADRID</p>
+                <h1 class="hero__title">¡El evento manga y cómic del año llega a Madrid!</h1>
+                <p class="hero__subtitle">
+                    Sumérgete en un espacio caótico y creativo diseñado por y para verdaderos fans del noveno arte.
+                </p>
+            </div>
+        </div>
+    </header>
+
+<div class="marquee">
+        <ul class="marquee__content">
+            <li>Mangas</li>
+            <li class="marquee__sep" aria-hidden="true">✦</li>
+            <li>Comics</li>
+            <li class="marquee__sep" aria-hidden="true">✦</li>
+            <li>Coleccionables</li>
+            <li class="marquee__sep" aria-hidden="true">✦</li>
+            <li>Cosplayers</li>
+            <li class="marquee__sep" aria-hidden="true">✦</li>
+            <li>Ilustraciones</li>
+            <li class="marquee__sep" aria-hidden="true">✦</li>
+            <li>Merchandising</li>
+            <li class="marquee__sep" aria-hidden="true">✦</li>
+        </ul>
+        <ul class="marquee__content" aria-hidden="true">
+            <li>Mangas</li>
+            <li class="marquee__sep" aria-hidden="true">✦</li>
+            <li>Comics</li>
+            <li class="marquee__sep" aria-hidden="true">✦</li>
+            <li>Coleccionables</li>
+            <li class="marquee__sep" aria-hidden="true">✦</li>
+            <li>Cosplayers</li>
+            <li class="marquee__sep" aria-hidden="true">✦</li>
+            <li>Ilustraciones</li>
+            <li class="marquee__sep" aria-hidden="true">✦</li>
+            <li>Merchandising</li>
+            <li class="marquee__sep" aria-hidden="true">✦</li>
+        </ul>
+    </div>
+
+    <main>
+        <!-- ============ INTRODUCCIÓN ============ -->
+        <section class="Intro" id="introduccion">
+            <div class="container about">
+                <div class="about__intro" data-aos="fade-up">
+                    <h2 class="intro__title">Sumérgete en la cultura gráfica</h2>
+                    <p>
+                        ¡Bienvenid@s a <strong>Splash Fest</strong>! Del viernes 15 al domingo 17 de noviembre, los pabellones 12 y 14 de IFEMA Madrid (acceso directo por la estación de metro Feria de Madrid) se convertirán en el punto de encuentro donde tus historias favoritas saltan del papel y las pantallas al mundo real.
+                    </p>
+                    <p>
+                        Prepárate para un fin de semana ininterrumpido. Explora nuestro inmenso <em>Artist Alley</em> repleto de creadores independientes, descubre fanzines únicos con esos crossovers imposibles que siempre imaginaste, y piérdete entre historias que van desde la acción hasta narrativas más íntimas. ¡Te esperamos con charlas, firmas y talleres para que no dejes de crear!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ INVITADOS ============ -->
+        <section class="Guests" id="invitados">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Artistas Invitados</h2>
+
+                <div class="cards">
+                    <!-- Fila 1 -->
+                    <div class="cards__invitado" data-aos="fade-up" data-aos-delay="0">
+                        <article class="card tarjeta-invitado" data-nombre="Jorge Jiménez" data-desc="Reconocido dibujante español de DC Comics. Es mundialmente famoso por su espectacular estilo dinámico en series como Batman, Liga de la Justicia y Super Sons." data-img="img/jorge-jimenez.jpg">
+                            <div class="card__img">
+                                <img src="img/jorge-jimenez.jpg" alt="Retrato de Jorge Jiménez" loading="lazy">
+                            </div>
+                            <div class="card__name">
+                                <h3>Jorge Jiménez</h3>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="cards__invitado" data-aos="fade-up" data-aos-delay="100">
+                        <article class="card tarjeta-invitado" data-nombre="Belén Ortega" data-desc="Ilustradora que ha conquistado el mercado americano y europeo. Ha trabajado para Marvel y DC en títulos como Catwoman y Batman, destacando por su fuerte influencia manga." data-img="img/belen-ortega.jpg">
+                            <div class="card__img">
+                                <img src="img/belen-ortega.jpg" alt="Retrato de Belén Ortega" loading="lazy">
+                            </div>
+                            <div class="card__name">
+                                <h3>Belén Ortega</h3>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="cards__invitado" data-aos="fade-up" data-aos-delay="200">
+                        <article class="card tarjeta-invitado" data-nombre="Salva Espín" data-desc="Dibujante estrella de Marvel Comics. Conocido por ser uno de los ilustradores principales de Deadpool (Masacre) y por su increíble energía en las firmas de cómics." data-img="img/salva-espin.jpg">
+                            <div class="card__img">
+                                <img src="img/salva-espin.jpg" alt="Retrato de Salva Espín" loading="lazy">
+                            </div>
+                            <div class="card__name">
+                                <h3>Salva Espín</h3>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Fila 2 -->
+                    <div class="cards__invitado" data-aos="fade-up" data-aos-delay="0">
+                        <article class="card tarjeta-invitado" data-nombre="Geheichou" data-desc="Cosplayer profesional e ilustrador español. Reconocido internacionalmente en la comunidad por sus impecables caracterizaciones de personajes de anime, manga y videojuegos." data-img="img/geheichou.jpg">
+                            <div class="card__img">
+                                <img src="img/geheichou.jpg" alt="Retrato de Geheichou" loading="lazy">
+                            </div>
+                            <div class="card__name">
+                                <h3>Geheichou</h3>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="cards__invitado" data-aos="fade-up" data-aos-delay="100">
+                        <article class="card tarjeta-invitado" data-nombre="Enji Night" data-desc="Cosplayer y modelo internacional. Es una de las figuras más icónicas de los salones del cómic mundiales, famosa por sus trajes de superhéroes clásicos y personajes de anime." data-img="img/enji-night.jpg">
+                            <div class="card__img">
+                                <img src="img/enji-night.jpg" alt="Retrato de Enji Night" loading="lazy">
+                            </div>
+                            <div class="card__name">
+                                <h3>Enji Night</h3>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="cards__invitado" data-aos="fade-up" data-aos-delay="200">
+                        <article class="card tarjeta-invitado" data-nombre="IluTV" data-desc="Uno de los creadores de contenido sobre manga y anime más grandes de habla hispana. Además de sus análisis, es co-fundador de la exitosa editorial independiente Kibook Ediciones." data-img="img/ilutv.jpg">
+                            <div class="card__img">
+                                <img src="img/ilutv.jpg" alt="Retrato de IluTV" loading="lazy">
+                            </div>
+                            <div class="card__name">
+                                <h3>IluTV</h3>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PROGRAMA ============ -->
+        <section class="section" id="programa">
+            <div class="container about">
+                <h2 class="section__title" data-aos="fade-right">Agenda del Festival</h2>
+                <p data-aos="fade-right">Tres días ininterrumpidos de actividades. Descubre los eventos principales:</p>
+                
+                <ul class="about__list">
+                    <li class="about__item" data-aos="fade-left" data-aos-delay="0">
+                        <h3>Viernes 15 de Noviembre</h3>
+                        <ul>
+                            <li><strong><time>16:00</time></strong> - Apertura de puertas y Artist Alley.</li>
+                            <li><strong><time>18:00</time></strong> - Charla: "El arte del estilo lineless".</li>
+                            <li><strong><time>20:00</time></strong> - Sesión de firmas (J. Jiménez y B. Ortega).</li>
+                        </ul>
+                    </li>
+                    <li class="about__item" data-aos="fade-left" data-aos-delay="100">
+                        <h3>Sábado 16 de Noviembre</h3>
+                        <ul>
+                            <li><strong><time>12:00</time></strong> - Taller: "Construyendo familias encontradas".</li>
+                            <li><strong><time>17:00</time></strong> - Gran Concurso de Cosplay.</li>
+                            <li><strong><time>19:00</time></strong> - Mesa redonda sobre crossovers.</li>
+                        </ul>
+                    </li>
+                    <li class="about__item" data-aos="fade-left" data-aos-delay="200">
+                        <h3>Domingo 17 de Noviembre</h3>
+                        <ul>
+                            <li><strong><time>11:00</time></strong> - Masterclass: "Diseño de criaturas".</li>
+                            <li><strong><time>16:00</time></strong> - Taller de autoedición de fanzines.</li>
+                            <li><strong><time>19:00</time></strong> - Ceremonia de clausura.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============ ACTIVIDADES ============ -->
+        <section class="section section--alt" id="actividades">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">¿Qué encontrarás en Splash Fest?</h2>
+
+                <div class="cards">
+                    <!-- Fila 1 -->
+                    <div class="cards__item" data-aos="fade-up" data-aos-delay="0">
+                        <div class="card">
+                            <div class="card__img">
+                                <img src="img/actividad-pokemon.jpg" alt="Zona Pokémon" loading="lazy">
+                            </div>
+                            <div class="card__body" style="text-align: center;">
+                                <h3 style="margin: 0;">Zona Pokémon</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cards__item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card">
+                            <div class="card__img">
+                                <img src="img/actividad-manga.jpg" alt="Cómics y Mangas" loading="lazy">
+                            </div>
+                            <div class="card__body" style="text-align: center;">
+                                <h3 style="margin: 0;">Cómics y Mangas</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cards__item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card">
+                            <div class="card__img">
+                                <img src="img/actividad-figuras.jpg" alt="Figuras y Blind Boxes" loading="lazy">
+                            </div>
+                            <div class="card__body" style="text-align: center;">
+                                <h3 style="margin: 0;">Figuras y Blind Boxes</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fila 2 -->
+                    <div class="cards__item" data-aos="fade-up" data-aos-delay="0">
+                        <div class="card">
+                            <div class="card__img">
+                                <img src="img/actividad-arte.jpg" alt="Arte Independiente" loading="lazy">
+                            </div>
+                            <div class="card__body" style="text-align: center;">
+                                <h3 style="margin: 0;">Arte Independiente</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cards__item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card">
+                            <div class="card__img">
+                                <img src="img/actividad-gaming.jpg" alt="Zona Free Play" loading="lazy">
+                            </div>
+                            <div class="card__body" style="text-align: center;">
+                                <h3 style="margin: 0;">Zona Free Play</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cards__item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card">
+                            <div class="card__img">
+                                <img src="img/actividad-cosplay.jpg" alt="Photocalls Temáticos" loading="lazy">
+                            </div>
+                            <div class="card__body" style="text-align: center;">
+                                <h3 style="margin: 0;">Photocalls Temáticos</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ UBICACIÓN ============ -->
+        <section class="section" id="donde-encontrarnos">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">¿Dónde encontrarnos?</h2>
+                
+                <div class="about__list">
+                    <div class="about__item" data-aos="zoom-in" data-aos-delay="0" style="width: 100%;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.3056157850233!2d-3.619077284602497!3d40.46851677935824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422e666a70e7e7%3A0xc66579e5631241be!2sIFEMA%20MADRID!5e0!3m2!1ses!2ses!4v1697042000000!5m2!1ses!2ses"
+                            width="100%"
+                            height="350"
+                            style="border: 0; border-radius: 8px;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                    <div class="about__item" data-aos="fade-left" data-aos-delay="100" style="margin-top: 2rem;">
+                        <h3>IFEMA Madrid - Recinto Ferial</h3>
+                        <p>Avenida del Partenón, 5, 28042 Madrid (Pabellones 12 y 14)</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li><i class="fa-solid fa-train-subway"></i> <strong>Metro:</strong> Línea 8 - Estación Feria de Madrid</li>
+                            <li><i class="fa-solid fa-bus"></i> <strong>Autobús:</strong> Líneas 73, 112 y 122 de EMT</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ COMPONENTE DE COMPRA (ENTRADAS) ============ -->
+        <section class="section section--alt" id="entradas">
+            <div class="container" data-aos="fade-up">
+                
+                <!-- Cabecera del componente de entradas adaptada -->
+                <header class="cabecera" style="text-align: center; margin-bottom: 3rem;">
+                    <span class="etiqueta">15 · 16 · 17 Noviembre 2026 · Madrid</span>
+                    <h2 class="section__title" style="margin-top: 1rem;">
+                        Consigue tus <span>Entradas</span>
+                    </h2>
+                    <p class="cabecera__texto">
+                        Asegura tu plaza para el evento manga y cómic del año. Selecciona tus opciones a continuación.
+                    </p>
+                </header>
+
+                <form class="compra" id="formulario-compra" novalidate>
+                    <div class="compra__principal">
+                        
+                        <!-- ---------- 1. Tipos de entrada ---------- -->
+                        <fieldset class="bloque">
+                            <legend class="bloque__titulo"><span>1</span> Elige tus entradas</legend>
+
+                            <!-- Pase 1 Día -->
+                            <article class="entrada entrada--amarilla" data-precio="15" data-nombre="Pase 1 Día">
+                                <div class="entrada__info">
+                                    <h2 class="entrada__nombre">Pase 1 Día</h2>
+                                    <p class="entrada__descripcion">
+                                        Acceso al recinto, charlas estándar y Artist Alley para un día a elegir.
+                                    </p>
+                                    <p class="entrada__precio">15,00 €</p>
+                                </div>
+                                <div class="entrada__controles">
+                                    <button type="button" class="contador__boton contador__boton--menos" aria-label="Quitar un Pase de 1 Día">−</button>
+                                    <span class="contador__cantidad" aria-live="polite">0</span>
+                                    <button type="button" class="contador__boton contador__boton--mas" aria-label="Añadir un Pase de 1 Día">+</button>
+                                </div>
+                                <p class="entrada__subtotal">Subtotal: <strong>0,00 €</strong></p>
+                            </article>
+
+                            <!-- Abono 3 Días -->
+                            <article class="entrada entrada--azul" data-precio="40" data-nombre="Abono 3 Días">
+                                <div class="entrada__info">
+                                    <h2 class="entrada__nombre">Abono 3 Días</h2>
+                                    <p class="entrada__descripcion">
+                                        Los tres días del festival, con acceso a todos los escenarios y Tote bag de regalo.
+                                    </p>
+                                    <p class="entrada__precio">40,00 €</p>
+                                </div>
+                                <div class="entrada__controles">
+                                    <button type="button" class="contador__boton contador__boton--menos" aria-label="Quitar un Abono de 3 días">−</button>
+                                    <span class="contador__cantidad" aria-live="polite">0</span>
+                                    <button type="button" class="contador__boton contador__boton--mas" aria-label="Añadir un Abono de 3 días">+</button>
+                                </div>
+                                <p class="entrada__subtotal">Subtotal: <strong>0,00 €</strong></p>
+                            </article>
+
+                            <!-- VIP Splash -->
+                            <article class="entrada entrada--rosa" data-precio="65" data-nombre="VIP Splash">
+                                <span class="entrada__destacado">Top ventas</span>
+                                <div class="entrada__info">
+                                    <h2 class="entrada__nombre">VIP Splash</h2>
+                                    <p class="entrada__descripcion">
+                                        Abono 3 días + Fast Pass sin colas, asiento reservado en el escenario principal y lámina exclusiva.
+                                    </p>
+                                    <p class="entrada__precio">65,00 €</p>
+                                </div>
+                                <div class="entrada__controles">
+                                    <button type="button" class="contador__boton contador__boton--menos" aria-label="Quitar una entrada VIP Splash">−</button>
+                                    <span class="contador__cantidad" aria-live="polite">0</span>
+                                    <button type="button" class="contador__boton contador__boton--mas" aria-label="Añadir una entrada VIP Splash">+</button>
+                                </div>
+                                <p class="entrada__subtotal">Subtotal: <strong>0,00 €</strong></p>
+                            </article>
+
+                            <!-- Pase Infantil -->
+                            <article class="entrada entrada--verde" data-precio="8" data-nombre="Pase Infantil (menores de 12)">
+                                <div class="entrada__info">
+                                    <h2 class="entrada__nombre">
+                                        Pase Infantil <small>(menores de 12)</small>
+                                    </h2>
+                                    <p class="entrada__descripcion">
+                                        Un día a elegir, siempre acompañado de un adulto con entrada válida.
+                                    </p>
+                                    <p class="entrada__precio">8,00 €</p>
+                                </div>
+                                <div class="entrada__controles">
+                                    <button type="button" class="contador__boton contador__boton--menos" aria-label="Quitar una entrada infantil">−</button>
+                                    <span class="contador__cantidad" aria-live="polite">0</span>
+                                    <button type="button" class="contador__boton contador__boton--mas" aria-label="Añadir una entrada infantil">+</button>
+                                </div>
+                                <p class="entrada__subtotal">Subtotal: <strong>0,00 €</strong></p>
+                            </article>
+
+                            <p class="bloque__nota">Máximo 10 entradas de cada tipo por compra.</p>
+                        </fieldset>
+
+                        <!-- ---------- 2. Datos de la compra ---------- -->
+                        <fieldset class="bloque">
+                            <legend class="bloque__titulo"><span>2</span> Tus datos</legend>
+
+                            <div class="campos">
+                                <div class="campo">
+                                    <label for="nombre">Nombre y apellidos</label>
+                                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Peter Parker" autocomplete="name" />
+                                </div>
+                                <div class="campo">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" placeholder="tu@email.com" autocomplete="email" />
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <!-- ---------- 3. Resumen y total ---------- -->
+                    <aside class="resumen" aria-labelledby="resumen-titulo">
+                        <h2 class="resumen__titulo" id="resumen-titulo"><span>3</span> Resumen</h2>
+
+                        <ul class="resumen__lista" id="resumen-lista">
+                            <li class="resumen__vacio">Todavía no has elegido ninguna entrada.</li>
+                        </ul>
+
+                        <dl class="resumen__cuentas">
+                            <div class="resumen__fila">
+                                <dt>Entradas</dt>
+                                <dd id="total-entradas">0</dd>
+                            </div>
+                            <div class="resumen__fila">
+                                <dt>Subtotal</dt>
+                                <dd id="subtotal">0,00 €</dd>
+                            </div>
+                            <div class="resumen__fila">
+                                <dt>Gastos de gestión <small>(1,50 € por entrada)</small></dt>
+                                <dd id="gastos">0,00 €</dd>
+                            </div>
+                            <div class="resumen__fila resumen__fila--total">
+                                <dt>Total</dt>
+                                <dd id="total">0,00 €</dd>
+                            </div>
+                        </dl>
+
+                        <button type="submit" class="boton boton--rosa" id="boton-comprar" disabled>
+                            Comprar entradas
+                        </button>
+
+                        <p class="mensaje" id="mensaje" role="status" aria-live="polite"></p>
+                    </aside>
+                </form>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- VENTANA MODAL DE INVITADOS (La única que queda) -->
+    <div id="modal-invitados" class="modal-oculto">
+        <div class="contenido-modal">
+            <span id="cerrar-modal" class="btn-cerrar"><i class="fa-solid fa-xmark"></i></span>
+            <img id="modal-img" src="" alt="Foto del artista">
+            <h3 id="modal-nombre">Nombre</h3>
+            <p id="modal-desc">Descripción</p>
+        </div>
+    </div>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <!-- Logo versión footer -->
+            <a href="#inicio" class="logo logo--footer">Splash<span>Fest</span></a>
+            
+            <!-- Enlaces de navegación rápidos -->
+            <ul class="footer__links">
+                <li><a href="#introduccion">Introducción</a></li>
+                <li><a href="#invitados">Invitados</a></li>
+                <li><a href="#programa">Programa</a></li>
+                <li><a href="#actividades">Actividades</a></li>
+                <li><a href="#entradas">Entradas</a></li>
+            </ul>
+            
+            <!-- Copyright (El span con id="year" suele usarse en JS para poner el año actual automáticamente) -->
+            <p class="footer__copy">&copy; <span id="year">2026</span> Splash Fest. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 100 });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
