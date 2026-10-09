@@ -248,7 +248,6 @@ h3 {
     display: inline; 
 }
 
-/* Contenedor de botones (sol/luna + hamburguesa alineados en fila) */
 .nav__actions {
     display: flex;
     align-items: center;
@@ -256,13 +255,12 @@ h3 {
     flex-shrink: 0;
 }
 
-/* Botón hamburguesa */
 .menu-toggle {
-    display: none;               /* En PC se mantiene oculto */
+    display: none;               
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;                    /* Separación entre las tres líneas */
+    gap: 5px;                    
     width: 44px;
     height: 44px;
     padding: 0 8px;
@@ -280,23 +278,21 @@ h3 {
     box-shadow: 1px 1px 0 var(--ink);
 }
 
-/* Las tres barras horizontales */
 .menu-toggle span {
     display: block;
     width: 100%;
-    height: 3px;                 /* Grosor de la línea */
-    background: var(--ink);      /* Blanco en modo oscuro, negro en modo claro */
+    height: 3px;                 
+    background: var(--ink);      
     border-radius: 2px;
     transition: transform 0.3s cubic-bezier(0.7, 0, 0.3, 1), opacity 0.2s ease;
 }
 
-/* Animación en 'X' al abrirse el menú */
 .menu-toggle[aria-expanded="true"] span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
 
 .menu-toggle[aria-expanded="true"] span:nth-child(2) {
-    opacity: 0;                  /* La del medio se vuelve invisible */
+    opacity: 0;                  
 }
 
 .menu-toggle[aria-expanded="true"] span:nth-child(3) {
@@ -723,10 +719,9 @@ body:has(dialog[open]) {
 }
 
 #programa {
-    padding-bottom: 8rem; /* Aumenta el espacio interior inferior */
+    padding-bottom: 8rem; 
 }
 
-/* Cuadrícula de 3 columnas (una por cada día del festival) */
 .about__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -736,11 +731,10 @@ body:has(dialog[open]) {
     margin: 0;
 }
 
-/* Tarjeta principal de cada día (inspirada en tu captura) */
 .about__item {
     background: var(--surface);
     border: var(--border);
-    border-radius: 24px;              /* Curvatura idéntica a tu captura */
+    border-radius: 24px;              
     box-shadow: var(--shadow);
     padding: 2rem 1.6rem;
     display: flex;
@@ -753,7 +747,6 @@ body:has(dialog[open]) {
     box-shadow: var(--shadow-lg);
 }
 
-/* Cabecera del día */
 .about__item > h3 {
     font-family: var(--font-display);
     font-size: 1.8rem;
@@ -762,6 +755,10 @@ body:has(dialog[open]) {
     margin-bottom: 1.5rem;
     padding-bottom: 0.8rem;
     border-bottom: 2px dashed var(--ink);
+}
+
+[data-theme="light"] .about__item > h3 {
+    color: #111111;
 }
 
 .about__item ul {
@@ -1397,14 +1394,9 @@ body:has(dialog[open]) {
     margin: 0 auto;
 }
 
-/* =========================================================
-   15. RESPONSIVE DESIGN (MEDIA QUERIES)
-   Puntos de corte: 900px (Tablet), 768px (Móvil), 560px (Móvil pequeño)
-   ========================================================= */
 
-/* ---------- TABLET (Hasta 900px) ---------- */
 @media (max-width: 900px) {
-    /* 1. Hero y Textos */
+   
     .hero {
         padding: calc(var(--nav-h) + 2rem) 1.5rem 4rem;
         min-height: auto;
@@ -1419,7 +1411,6 @@ body:has(dialog[open]) {
         margin: 0 auto;
     }
 
-    /* 2. Introducción (Mancha + Texto) */
     .about {
         flex-direction: column;
         text-align: center;
@@ -1436,7 +1427,6 @@ body:has(dialog[open]) {
         margin-right: auto;
     }
 
-    /* 3. Reorganización de cuadrículas: de 3 columnas pasan a 2 */
     #invitados .cards,
     #actividades .cards,
     #programa .about__list {
@@ -1444,7 +1434,6 @@ body:has(dialog[open]) {
         gap: 2.5rem 1.8rem;
     }
 
-    /* 4. Componente de compra: la columna de resumen baja */
     .compra {
         flex-direction: column;
         align-items: stretch;
@@ -1452,14 +1441,13 @@ body:has(dialog[open]) {
 
     .resumen {
         flex-basis: auto;
-        position: static; /* Deja de ser flotante para no solapar el formulario */
+        position: static; 
         width: 100%;
     }
 }
 
-/* ---------- MÓVIL ESTÁNDAR (Hasta 768px) ---------- */
+
 @media (max-width: 768px) {
-    /* 1. Reducción y control de espacios entre secciones (elimina los huecos negros) */
     .section {
         padding: 2.5rem 0 !important;
     }
@@ -1482,12 +1470,10 @@ body:has(dialog[open]) {
         margin-bottom: 1.8rem !important;
     }
 
-    /* 2. Botón menú hamburguesa */
     .menu-toggle {
         display: flex;
     }
 
-    /* 3. Navegación que se oculta */
     .nav--hidden {
         transform: translateY(calc(-100% - 8px));
     }
@@ -1511,7 +1497,6 @@ body:has(dialog[open]) {
         z-index: 3;
     }
 
-    /* 4. Menú móvil a pantalla completa */
     .nav__links {
         position: fixed;
         top: 0;
@@ -1564,7 +1549,7 @@ body:has(dialog[open]) {
         padding: 0.4rem 1.2rem;
     }
 
-    /* 5. Círculos de artistas adaptados */
+    
     #invitados .card__img {
         width: 190px;
         height: 190px;
@@ -1573,7 +1558,7 @@ body:has(dialog[open]) {
     #invitados .card h3 {
         font-size: 1.25rem;
     }
-    /* ---------- MODAL ADAPTADA A MÓVIL (COMPLETA Y SIN CORTES) ---------- */
+   
     .modal {
         padding: 0.8rem;
         width: 95%;
@@ -1581,23 +1566,23 @@ body:has(dialog[open]) {
     }
 
     .modal__card {
-        max-height: 85vh;          /* Nunca supera la altura de la pantalla del móvil */
+        max-height: 85vh;          
         display: flex;
         flex-direction: column;
     }
 
     .modal__img {
-        height: 220px !important;  /* Altura proporcional para móvil */
-        flex-shrink: 0;            /* Impide que la imagen se aplaste */
+        height: 220px !important;  
+        flex-shrink: 0;            
     }
 
     .modal__img img {
-    object-position: center 20% !important; /* 👈 Cambia 'top' por 20% (o 25%) */
+    object-position: center 20% !important; 
 }
 
     .modal__body {
         padding: 1.1rem 1.3rem;
-        overflow-y: auto;          /* Permite leer todo el texto si la pantalla es pequeña */
+        overflow-y: auto;          
     }
 
     .modal__body h3 {
@@ -1619,9 +1604,9 @@ body:has(dialog[open]) {
     }
 }
 
-/* ---------- MÓVIL ESTRECHO (Hasta 560px) ---------- */
+
 @media (max-width: 560px) {
-    /* 1. Todas las cuadrículas colapsan a 1 sola columna fluida */
+    
     #invitados .cards,
     #actividades .cards,
     #programa .about__list {
@@ -1629,7 +1614,6 @@ body:has(dialog[open]) {
         gap: 2rem;
     }
 
-    /* 2. Cuadro del Hero más compacto */
     .hero__text {
         padding: 2rem 1.4rem;
         box-shadow: 6px 6px 0 var(--purple-lum);
@@ -1639,12 +1623,10 @@ body:has(dialog[open]) {
         font-size: 2.3rem;
     }
 
-    /* 3. Mancha de introducción adaptada a pantallas estrechas */
     .about__media {
         max-width: 290px;
     }
-
-    /* 4. Tarjetas de entradas: sin huecos verticales en móvil */
+   
     .entrada {
         flex-direction: column;
         align-items: flex-start;
@@ -1653,7 +1635,7 @@ body:has(dialog[open]) {
     }
 
     .entrada__info {
-        flex: none;           /* 👈 CLAVE: elimina los 280px de altura obligatoria */
+        flex: none;          
         width: 100%;
     }
 
@@ -1662,17 +1644,17 @@ body:has(dialog[open]) {
     }
 
     .entrada__subtotal {
-        flex-basis: auto;     /* Ajusta la línea de puntos y subtotal al flujo vertical */
+        flex-basis: auto;     
         width: 100%;
     }
 
     .campos {
         flex-direction: column;
-        gap: 1.2rem;          /* Separación limpia y proporcionada entre campos */
+        gap: 1.2rem;         
     }
 
     .campo {
-        flex: none;           /* 👈 CLAVE: quita los 240px de altura fija */
+        flex: none;           
         width: 100%;
     }
     /* 5. Mapa interactivo */
@@ -1691,8 +1673,6 @@ body:has(dialog[open]) {
     }
 }
 
-
-/* ---------- ACCESIBILIDAD (Movimiento reducido) ---------- */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation: none !important;
