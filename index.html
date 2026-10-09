@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SplashFestFestival</title>
     <meta name="description" content="El evento manga y cómic del año llega a Madrid. Descubre invitados, fanzines y actividades exclusivas en Splash Fest.">
 
-    <!-- Tipografías: Chakra Petch (Títulos) e Inter (Cuerpo) -->
+    <!-- Tipografías: Bangers (Títulos) e Inter (Cuerpo) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
     <!-- FontAwesome para los iconos -->
     <script src="https://kit.fontawesome.com/c3fd22b8e3.js" crossorigin="anonymous"></script>
@@ -40,6 +40,11 @@
             </ul>
 
             <div class="nav__actions">
+              <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Cambiar a modo oscuro">
+                    <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">☾</span>
+                    <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀</span>
+                </button>
+
                 <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú" id="Hamburguesa">
                     <span></span>
                     <span></span>
@@ -62,7 +67,7 @@
         </div>
     </header>
 
-<div class="marquee">
+    <div class="marquee">
         <ul class="marquee__content">
             <li>Mangas</li>
             <li class="marquee__sep" aria-hidden="true">✦</li>
@@ -94,90 +99,101 @@
     </div>
 
     <main>
+
         <!-- ============ INTRODUCCIÓN ============ -->
-        <section class="Intro" id="introduccion">
-            <div class="container about">
-                <div class="about__intro" data-aos="fade-up">
-                    <h2 class="intro__title">Sumérgete en la cultura gráfica</h2>
-                    <p>
-                        ¡Bienvenid@s a <strong>Splash Fest</strong>! Del viernes 15 al domingo 17 de noviembre, los pabellones 12 y 14 de IFEMA Madrid (acceso directo por la estación de metro Feria de Madrid) se convertirán en el punto de encuentro donde tus historias favoritas saltan del papel y las pantallas al mundo real.
-                    </p>
-                    <p>
-                        Prepárate para un fin de semana ininterrumpido. Explora nuestro inmenso <em>Artist Alley</em> repleto de creadores independientes, descubre fanzines únicos con esos crossovers imposibles que siempre imaginaste, y piérdete entre historias que van desde la acción hasta narrativas más íntimas. ¡Te esperamos con charlas, firmas y talleres para que no dejes de crear!
-                    </p>
-                </div>
+<section class="section" id="introduccion">
+    <div class="container about">
+        
+        <!-- 1. Imagen a la izquierda -->
+        <div class="about__media" data-aos="fade-right">
+            <div class="about__frame">
+                <img src="imágenes/Evento.png" alt="Ambiente Splash Fest">
             </div>
-        </section>
+        </div>
+
+        <!-- 2. Texto a la derecha -->
+        <div class="about__intro" data-aos="fade-left">
+            <h2 class="section__title section__title--left">Sumérgete en la cultura gráfica</h2>
+            <p>
+                ¡Bienvenid@s a <strong>Splash Fest</strong>! Del viernes 15 al domingo 17 de noviembre, los pabellones 12 y 14 de IFEMA Madrid (acceso directo por la estación de metro Feria de Madrid) se convertirán en el punto de encuentro donde tus historias favoritas saltan del papel y las pantallas al mundo real.
+            </p>
+            <p>
+                Prepárate para un fin de semana ininterrumpido. Visita a tus <em>invitados</em> favoritos, repleto de artistas independientes, descubre fanzines únicos con esos crossovers imposibles que siempre imaginaste, y piérdete entre historias que van desde la acción hasta narrativas más íntimas. ¡Te esperamos con charlas, firmas y talleres para que no dejes de crear!
+            </p>
+        </div>
+
+    </div>
+</section>
 
         <!-- ============ INVITADOS ============ -->
-        <section class="Guests" id="invitados">
+        <section class="section section--alt" id="invitados">
             <div class="container">
                 <h2 class="section__title" data-aos="fade-up">Artistas Invitados</h2>
 
                 <div class="cards">
                     <!-- Fila 1 -->
-                    <div class="cards__invitado" data-aos="fade-up" data-aos-delay="0">
-                        <article class="card tarjeta-invitado" data-nombre="Jorge Jiménez" data-desc="Reconocido dibujante español de DC Comics. Es mundialmente famoso por su espectacular estilo dinámico en series como Batman, Liga de la Justicia y Super Sons." data-img="img/jorge-jimenez.jpg">
+                    <div class="cards__item" data-aos="fade-up" data-aos-delay="0">
+                        <article class="card tarjeta-invitado" data-nombre="Jorge Jiménez" data-desc="Reconocido dibujante español de DC Comics. Es mundialmente famoso por su espectacular estilo dinámico en series como Batman, Liga de la Justicia y Super Sons." data-img="imágenes/JorgeJimenez.jpeg">
                             <div class="card__img">
-                                <img src="img/jorge-jimenez.jpg" alt="Retrato de Jorge Jiménez" loading="lazy">
+                                <img src="imágenes/JorgeJimenez.jpeg" alt="Retrato de Jorge Jiménez" loading="lazy">
                             </div>
-                            <div class="card__name">
+                            <div class="card__body">
                                 <h3>Jorge Jiménez</h3>
                             </div>
                         </article>
                     </div>
 
-                    <div class="cards__invitado" data-aos="fade-up" data-aos-delay="100">
-                        <article class="card tarjeta-invitado" data-nombre="Belén Ortega" data-desc="Ilustradora que ha conquistado el mercado americano y europeo. Ha trabajado para Marvel y DC en títulos como Catwoman y Batman, destacando por su fuerte influencia manga." data-img="img/belen-ortega.jpg">
+                    <div class="cards__item" data-aos="fade-up" data-aos-delay="100">
+                        <article class="card tarjeta-invitado" data-nombre="Belén Ortega" data-desc="Ilustradora que ha conquistado el mercado americano y europeo. Ha trabajado para Marvel y DC en títulos como Catwoman y Batman, destacando por su fuerte influencia manga." data-img="imágenes/BelenOrtega.jpeg">
                             <div class="card__img">
-                                <img src="img/belen-ortega.jpg" alt="Retrato de Belén Ortega" loading="lazy">
+                                <img src="imágenes/BelenOrtega.jpeg" alt="Retrato de Belén Ortega" loading="lazy">
                             </div>
-                            <div class="card__name">
+                            <div class="card__body">
                                 <h3>Belén Ortega</h3>
                             </div>
                         </article>
                     </div>
 
-                    <div class="cards__invitado" data-aos="fade-up" data-aos-delay="200">
-                        <article class="card tarjeta-invitado" data-nombre="Salva Espín" data-desc="Dibujante estrella de Marvel Comics. Conocido por ser uno de los ilustradores principales de Deadpool (Masacre) y por su increíble energía en las firmas de cómics." data-img="img/salva-espin.jpg">
+                    <div class="cards__item" data-aos="fade-up" data-aos-delay="200">
+                        <article class="card tarjeta-invitado" data-nombre="Salva Espín" data-desc="Dibujante estrella de Marvel Comics. Conocido por ser uno de los ilustradores principales de Deadpool (Masacre) y por su increíble energía en las firmas de cómics." data-img="imágenes/SalvaEspin.jpeg">
                             <div class="card__img">
-                                <img src="img/salva-espin.jpg" alt="Retrato de Salva Espín" loading="lazy">
+                                <img src="imágenes/SalvaEspin.jpeg" alt="Retrato de Salva Espín" loading="lazy">
                             </div>
-                            <div class="card__name">
+                            <div class="card__body">
                                 <h3>Salva Espín</h3>
                             </div>
                         </article>
                     </div>
 
                     <!-- Fila 2 -->
-                    <div class="cards__invitado" data-aos="fade-up" data-aos-delay="0">
-                        <article class="card tarjeta-invitado" data-nombre="Geheichou" data-desc="Cosplayer profesional e ilustrador español. Reconocido internacionalmente en la comunidad por sus impecables caracterizaciones de personajes de anime, manga y videojuegos." data-img="img/geheichou.jpg">
+                    <div class="cards__item" data-aos="fade-up" data-aos-delay="0">
+                        <article class="card tarjeta-invitado" data-nombre="Geheichou" data-desc="Cosplayer profesional e ilustrador español. Reconocido internacionalmente en la comunidad por sus impecables caracterizaciones de personajes de anime, manga y videojuegos." data-img="imágenes/Geheichou.jpeg">
                             <div class="card__img">
-                                <img src="img/geheichou.jpg" alt="Retrato de Geheichou" loading="lazy">
+                                <img src="imágenes/Geheichou.jpeg" alt="Retrato de Geheichou" loading="lazy">
                             </div>
-                            <div class="card__name">
+                            <div class="card__body">
                                 <h3>Geheichou</h3>
                             </div>
                         </article>
                     </div>
 
-                    <div class="cards__invitado" data-aos="fade-up" data-aos-delay="100">
-                        <article class="card tarjeta-invitado" data-nombre="Enji Night" data-desc="Cosplayer y modelo internacional. Es una de las figuras más icónicas de los salones del cómic mundiales, famosa por sus trajes de superhéroes clásicos y personajes de anime." data-img="img/enji-night.jpg">
+                    <div class="cards__item" data-aos="fade-up" data-aos-delay="100">
+                        <article class="card tarjeta-invitado" data-nombre="Enji Night" data-desc="Cosplayer y modelo internacional. Es una de las figuras más icónicas de los salones del cómic mundiales, famosa por sus trajes de superhéroes clásicos y personajes de anime." data-img="imágenes/EnjiNight.jpeg">
                             <div class="card__img">
-                                <img src="img/enji-night.jpg" alt="Retrato de Enji Night" loading="lazy">
+                                <img src="imágenes/EnjiNight.jpeg" alt="Retrato de Enji Night" loading="lazy">
                             </div>
-                            <div class="card__name">
+                            <div class="card__body">
                                 <h3>Enji Night</h3>
                             </div>
                         </article>
                     </div>
 
-                    <div class="cards__invitado" data-aos="fade-up" data-aos-delay="200">
-                        <article class="card tarjeta-invitado" data-nombre="IluTV" data-desc="Uno de los creadores de contenido sobre manga y anime más grandes de habla hispana. Además de sus análisis, es co-fundador de la exitosa editorial independiente Kibook Ediciones." data-img="img/ilutv.jpg">
+                    <div class="cards__item" data-aos="fade-up" data-aos-delay="200">
+                        <article class="card tarjeta-invitado" data-nombre="IluTV" data-desc="Uno de los creadores de contenido sobre manga y anime más grandes de habla hispana. Además de sus análisis, es co-fundador de la exitosa editorial independiente Kibook Ediciones." data-img="imágenes/Ilutv.jpeg">
                             <div class="card__img">
-                                <img src="img/ilutv.jpg" alt="Retrato de IluTV" loading="lazy">
+                                <img src="imágenes/Ilutv.jpeg" alt="Retrato de IluTV" loading="lazy">
                             </div>
-                            <div class="card__name">
+                            <div class="card__body">
                                 <h3>IluTV</h3>
                             </div>
                         </article>
@@ -231,7 +247,7 @@
                     <div class="cards__item" data-aos="fade-up" data-aos-delay="0">
                         <div class="card">
                             <div class="card__img">
-                                <img src="img/actividad-pokemon.jpg" alt="Zona Pokémon" loading="lazy">
+                                <img src="imágenes/ZonaPokemon.jpeg" alt="Zona Pokémon" loading="lazy">
                             </div>
                             <div class="card__body" style="text-align: center;">
                                 <h3 style="margin: 0;">Zona Pokémon</h3>
@@ -242,7 +258,7 @@
                     <div class="cards__item" data-aos="fade-up" data-aos-delay="100">
                         <div class="card">
                             <div class="card__img">
-                                <img src="img/actividad-manga.jpg" alt="Cómics y Mangas" loading="lazy">
+                                <img src="imágenes/MangasComics.jpeg" alt="Cómics y Mangas" loading="lazy">
                             </div>
                             <div class="card__body" style="text-align: center;">
                                 <h3 style="margin: 0;">Cómics y Mangas</h3>
@@ -253,7 +269,7 @@
                     <div class="cards__item" data-aos="fade-up" data-aos-delay="200">
                         <div class="card">
                             <div class="card__img">
-                                <img src="img/actividad-figuras.jpg" alt="Figuras y Blind Boxes" loading="lazy">
+                                <img src="imágenes/Figuras.jpeg" alt="Figuras y Blind Boxes" loading="lazy">
                             </div>
                             <div class="card__body" style="text-align: center;">
                                 <h3 style="margin: 0;">Figuras y Blind Boxes</h3>
@@ -265,7 +281,7 @@
                     <div class="cards__item" data-aos="fade-up" data-aos-delay="0">
                         <div class="card">
                             <div class="card__img">
-                                <img src="img/actividad-arte.jpg" alt="Arte Independiente" loading="lazy">
+                                <img src="imágenes/Ilustraciones.jpeg" alt="Arte Independiente" loading="lazy">
                             </div>
                             <div class="card__body" style="text-align: center;">
                                 <h3 style="margin: 0;">Arte Independiente</h3>
@@ -276,7 +292,7 @@
                     <div class="cards__item" data-aos="fade-up" data-aos-delay="100">
                         <div class="card">
                             <div class="card__img">
-                                <img src="img/actividad-gaming.jpg" alt="Zona Free Play" loading="lazy">
+                                <img src="imágenes/ZonaJuego.jpeg" alt="Zona Free Play" loading="lazy">
                             </div>
                             <div class="card__body" style="text-align: center;">
                                 <h3 style="margin: 0;">Zona Free Play</h3>
@@ -287,7 +303,7 @@
                     <div class="cards__item" data-aos="fade-up" data-aos-delay="200">
                         <div class="card">
                             <div class="card__img">
-                                <img src="img/actividad-cosplay.jpg" alt="Photocalls Temáticos" loading="lazy">
+                                <img src="imágenes/ZonaFotos.jpeg" alt="Photocalls Temáticos" loading="lazy">
                             </div>
                             <div class="card__body" style="text-align: center;">
                                 <h3 style="margin: 0;">Photocalls Temáticos</h3>
@@ -307,7 +323,6 @@
                     <div class="about__item" data-aos="zoom-in" data-aos-delay="0" style="width: 100%;">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.3056157850233!2d-3.619077284602497!3d40.46851677935824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422e666a70e7e7%3A0xc66579e5631241be!2sIFEMA%20MADRID!5e0!3m2!1ses!2ses!4v1697042000000!5m2!1ses!2ses"
-                            width="100%"
                             height="350"
                             style="border: 0; border-radius: 8px;"
                             allowfullscreen=""
@@ -480,15 +495,19 @@
         </section>
     </main>
 
-    <!-- VENTANA MODAL DE INVITADOS (La única que queda) -->
-    <div id="modal-invitados" class="modal-oculto">
-        <div class="contenido-modal">
-            <span id="cerrar-modal" class="btn-cerrar"><i class="fa-solid fa-xmark"></i></span>
-            <img id="modal-img" src="" alt="Foto del artista">
-            <h3 id="modal-nombre">Nombre</h3>
-            <p id="modal-desc">Descripción</p>
+    <!-- ============ VENTANA MODAL DE INVITADOS ============ -->
+<dialog class="modal" id="modal-invitado">
+    <div class="modal__card">
+        <button class="modal__close" id="modal-close" type="button" aria-label="Cerrar modal">&times;</button>
+        <div class="modal__img">
+            <img id="modal-img" src="imágenes/artista.jpg" alt="Fotografía del artista">
+        </div>
+        <div class="modal__body">
+            <h3 id="modal-nombre">Nombre Artista</h3>
+            <p id="modal-desc">Descripción del artista...</p>
         </div>
     </div>
+</dialog>
 
     <!-- ============ FOOTER ============ -->
     <footer class="footer">
@@ -505,11 +524,10 @@
                 <li><a href="#entradas">Entradas</a></li>
             </ul>
             
-            <!-- Copyright (El span con id="year" suele usarse en JS para poner el año actual automáticamente) -->
+            <!-- Copyright -->
             <p class="footer__copy">&copy; <span id="year">2026</span> Splash Fest. Todos los derechos reservados.</p>
         </div>
     </footer>
-
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
