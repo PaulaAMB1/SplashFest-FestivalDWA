@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;600;700&display=swap');
-
 :root {
    
     --purple-lum: #B533FF;   
@@ -250,7 +248,60 @@ h3 {
     display: inline; 
 }
 
-.menu-toggle { display: none; }
+/* Contenedor de botones (sol/luna + hamburguesa alineados en fila) */
+.nav__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-shrink: 0;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+    display: none;               /* En PC se mantiene oculto */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;                    /* Separación entre las tres líneas */
+    width: 44px;
+    height: 44px;
+    padding: 0 8px;
+    background: var(--surface);
+    border: var(--border);
+    border-radius: var(--radius);
+    box-shadow: 3px 3px 0 var(--ink);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform var(--speed) ease, box-shadow var(--speed) ease;
+}
+
+.menu-toggle:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--ink);
+}
+
+/* Las tres barras horizontales */
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;                 /* Grosor de la línea */
+    background: var(--ink);      /* Blanco en modo oscuro, negro en modo claro */
+    border-radius: 2px;
+    transition: transform 0.3s cubic-bezier(0.7, 0, 0.3, 1), opacity 0.2s ease;
+}
+
+/* Animación en 'X' al abrirse el menú */
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;                  /* La del medio se vuelve invisible */
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
 
 .hero {
     min-height: 90vh;
@@ -1344,4 +1395,307 @@ body:has(dialog[open]) {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
+}
+
+/* =========================================================
+   15. RESPONSIVE DESIGN (MEDIA QUERIES)
+   Puntos de corte: 900px (Tablet), 768px (Móvil), 560px (Móvil pequeño)
+   ========================================================= */
+
+/* ---------- TABLET (Hasta 900px) ---------- */
+@media (max-width: 900px) {
+    /* 1. Hero y Textos */
+    .hero {
+        padding: calc(var(--nav-h) + 2rem) 1.5rem 4rem;
+        min-height: auto;
+    }
+
+    .hero__text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero__subtitle {
+        margin: 0 auto;
+    }
+
+    /* 2. Introducción (Mancha + Texto) */
+    .about {
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .about__media {
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .about__intro .section__title--left {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* 3. Reorganización de cuadrículas: de 3 columnas pasan a 2 */
+    #invitados .cards,
+    #actividades .cards,
+    #programa .about__list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem 1.8rem;
+    }
+
+    /* 4. Componente de compra: la columna de resumen baja */
+    .compra {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .resumen {
+        flex-basis: auto;
+        position: static; /* Deja de ser flotante para no solapar el formulario */
+        width: 100%;
+    }
+}
+
+/* ---------- MÓVIL ESTÁNDAR (Hasta 768px) ---------- */
+@media (max-width: 768px) {
+    /* 1. Reducción y control de espacios entre secciones (elimina los huecos negros) */
+    .section {
+        padding: 2.5rem 0 !important;
+    }
+
+    #introduccion,
+    #invitados,
+    #programa,
+    #actividades,
+    #donde-encontrarnos,
+    #entradas {
+        margin-bottom: 0 !important;
+        padding-top: 1.8rem !important;
+        padding-bottom: 2.2rem !important;
+    }
+
+    .section__title,
+    #invitados .section__title,
+    #actividades .section__title,
+    #donde-encontrarnos .section__title {
+        margin-bottom: 1.8rem !important;
+    }
+
+    /* 2. Botón menú hamburguesa */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* 3. Navegación que se oculta */
+    .nav--hidden {
+        transform: translateY(calc(-100% - 8px));
+    }
+
+    .nav::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: -3px;
+        z-index: 2;
+        background: var(--surface);
+        border-bottom: var(--border);
+        transition: background-color 0.3s ease;
+    }
+
+    .logo,
+    .nav__actions {
+        position: relative;
+        z-index: 3;
+    }
+
+    /* 4. Menú móvil a pantalla completa */
+    .nav__links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: calc(var(--nav-h) + 1rem) 1.5rem 2rem;
+        background-color: var(--surface);
+        border-bottom: 6px solid var(--ink);
+        transform: translateY(-100%);
+        visibility: hidden;
+        transition: transform 0.45s cubic-bezier(0.7, 0, 0.3, 1), visibility 0s linear 0.45s;
+    }
+
+    .nav__links.is-open {
+        transform: translateY(0);
+        visibility: visible;
+        transition: transform 0.45s cubic-bezier(0.7, 0, 0.3, 1), visibility 0s linear 0s;
+    }
+
+    .nav__links li {
+        opacity: 0;
+        transform: translateY(-16px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav__links.is-open li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav__links.is-open li:nth-child(1) { transition-delay: 0.10s; }
+    .nav__links.is-open li:nth-child(2) { transition-delay: 0.15s; }
+    .nav__links.is-open li:nth-child(3) { transition-delay: 0.20s; }
+    .nav__links.is-open li:nth-child(4) { transition-delay: 0.25s; }
+    .nav__links.is-open li:nth-child(5) { transition-delay: 0.30s; }
+    .nav__links.is-open li:nth-child(6) { transition-delay: 0.35s; }
+
+    .nav__links a {
+        font-family: var(--font-display);
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 0.4rem 1.2rem;
+    }
+
+    /* 5. Círculos de artistas adaptados */
+    #invitados .card__img {
+        width: 190px;
+        height: 190px;
+    }
+
+    #invitados .card h3 {
+        font-size: 1.25rem;
+    }
+    /* ---------- MODAL ADAPTADA A MÓVIL (COMPLETA Y SIN CORTES) ---------- */
+    .modal {
+        padding: 0.8rem;
+        width: 95%;
+        max-width: 440px;
+    }
+
+    .modal__card {
+        max-height: 85vh;          /* Nunca supera la altura de la pantalla del móvil */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modal__img {
+        height: 220px !important;  /* Altura proporcional para móvil */
+        flex-shrink: 0;            /* Impide que la imagen se aplaste */
+    }
+
+    .modal__img img {
+    object-position: center 20% !important; /* 👈 Cambia 'top' por 20% (o 25%) */
+}
+
+    .modal__body {
+        padding: 1.1rem 1.3rem;
+        overflow-y: auto;          /* Permite leer todo el texto si la pantalla es pequeña */
+    }
+
+    .modal__body h3 {
+        font-size: 1.6rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .modal__body p {
+        font-size: 0.95rem;
+        line-height: 1.45;
+    }
+
+    .modal__close {
+        top: 8px;
+        right: 8px;
+        width: 34px;
+        height: 34px;
+        font-size: 1.4rem;
+    }
+}
+
+/* ---------- MÓVIL ESTRECHO (Hasta 560px) ---------- */
+@media (max-width: 560px) {
+    /* 1. Todas las cuadrículas colapsan a 1 sola columna fluida */
+    #invitados .cards,
+    #actividades .cards,
+    #programa .about__list {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* 2. Cuadro del Hero más compacto */
+    .hero__text {
+        padding: 2rem 1.4rem;
+        box-shadow: 6px 6px 0 var(--purple-lum);
+    }
+
+    .hero__title {
+        font-size: 2.3rem;
+    }
+
+    /* 3. Mancha de introducción adaptada a pantallas estrechas */
+    .about__media {
+        max-width: 290px;
+    }
+
+    /* 4. Tarjetas de entradas: sin huecos verticales en móvil */
+    .entrada {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+        padding: 1.4rem;
+    }
+
+    .entrada__info {
+        flex: none;           /* 👈 CLAVE: elimina los 280px de altura obligatoria */
+        width: 100%;
+    }
+
+    .entrada__controles {
+        align-self: flex-start;
+    }
+
+    .entrada__subtotal {
+        flex-basis: auto;     /* Ajusta la línea de puntos y subtotal al flujo vertical */
+        width: 100%;
+    }
+
+    .campos {
+        flex-direction: column;
+        gap: 1.2rem;          /* Separación limpia y proporcionada entre campos */
+    }
+
+    .campo {
+        flex: none;           /* 👈 CLAVE: quita los 240px de altura fija */
+        width: 100%;
+    }
+    /* 5. Mapa interactivo */
+    #donde-encontrarnos iframe {
+        height: 280px;
+    }
+
+    /* 6. Footer */
+    .footer {
+        padding: 2.5rem 1rem 2rem;
+    }
+
+    .footer__links {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
+
+
+/* ---------- ACCESIBILIDAD (Movimiento reducido) ---------- */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
 }
